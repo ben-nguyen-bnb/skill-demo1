@@ -45,6 +45,7 @@ class Handler implements URLHandler {
                List<String> foundPaths = new ArrayList<>();
                for(File f: paths) {
                    if(FileHelpers.readFile(f).contains(parameters[1])) {
+                    // if (f.toString().contains(parameters[1])) {
                        foundPaths.add(f.toString());
                    }
                }
@@ -62,7 +63,7 @@ class Handler implements URLHandler {
     }
 }
 
-class DocSearchServer {
+public class DocSearchServer {
     public static void main(String[] args) throws IOException {
         if(args.length == 0){
             System.out.println("Missing port number! Try any number between 1024 to 49151");
